@@ -1,1 +1,6 @@
-<p>checkbox works!</p>
+<form [formGroup]="selectedCountries">
+  <div class="" *ngFor="let country of countries">
+    <input id="{{ country.name }}" name="{{ country.name }}" type="checkbox" value="{{ country.name }}" (change)="onChange(country.name,$event.target.checked)">
+    <label class="" for="{{ country.name }}">{{ country.name }}</label>
+  </div>
+</form>
