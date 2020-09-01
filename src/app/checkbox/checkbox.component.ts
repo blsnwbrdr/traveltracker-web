@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
-import { Countries } from './countries';
-import { CountriesService } from './countries.service';
+import { Countries } from '../service/countries';
+import { CountriesService } from '../service/countries.service';
 
 @Component({
   selector: 'app-checkbox',
