@@ -1,0 +1,15 @@
+.list{
+  column-count: 1;
+}
+
+@media(min-width:768px){
+  .list{
+    column-count: 2;
+  }
+}
+
+@media(min-width:1024px){
+  .list{
+    column-count: 3;
+  }
+}
