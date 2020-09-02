@@ -5,11 +5,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { TitleComponent } from './components/title.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,
