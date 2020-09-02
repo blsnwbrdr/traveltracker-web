@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Countries } from '../service/countries';
 import { CountriesService } from '../service/countries.service';
+import { LocalStorageService } from '../service/local-storage.service';
 
 @Component({
   selector: 'app-checkbox',
@@ -15,7 +16,8 @@ export class CheckboxComponent implements OnInit {
   selectedCountries: FormGroup;
 
   constructor(private fb: FormBuilder,
-              private countriesService: CountriesService
+              private countriesService: CountriesService,
+              private localStorageService: LocalStorageService
             ) { }
 
   ngOnInit(): void {
@@ -52,7 +54,18 @@ export class CheckboxComponent implements OnInit {
       selectedCountriesArray.removeAt(index);
     }
     // return selected countries array
-    console.log(selectedCountriesArray.value);
+    // console.log(selectedCountriesArray.value);
+    this.saveData('list', selectedCountriesArray.value);
     return selectedCountriesArray.value;
+  }
+
+  // SAVE DATA TO LOCAL STORAGE
+  saveData(key: string, value: any){
+    this.localStorageService.set(key, value);
+  }
+
+  // READ DATA FROM LOCAL STORAGE
+  readData(key: string){
+    this.localStorageService.get(key);
   }
 }
