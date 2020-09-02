@@ -6,41 +6,9 @@
 body{
   font-family: 'Titillium Web', Arial, sans-serif;
 }
-.checkbox{
-  width: 100%;
-}
-.checkbox__input{
-  display: none;
-}
-.checkbox__label{
-  width: 100%;
-  padding: .75rem;
-  margin-bottom: .75rem;
-  border: 2px solid $colorAqua;
-  border-radius: .25rem;
-  background-color: $colorBlue;
-  text-align: center;
-  color: white;
-}
-.checkbox__input:checked ~ .checkbox__label{
-  border-color: $colorBlue;
-  background-color: white;
+.text--blue{
   color: $colorBlue;
 }
-
-@media(min-width:1024px){
-  .checkbox__label{
-    margin-bottom: 1rem;
-  }
-}
-
-// NON-TOUCHSCREENS
-@media(hover:hover){
-  .checkbox__label{
-    &:hover{
-      cursor: pointer;
-      background-color: white;
-      color: $colorBlue;
-    }
-  }
+.text-aqua{
+  color: $colorAqua;
 }
