@@ -5,6 +5,13 @@
 
 body{
   font-family: 'Titillium Web', Arial, sans-serif;
+  color: $colorDarkGrey;
+}
+a{
+  color: $colorDarkGrey;
+  &:hover{
+    color: $colorBlue;
+  }
 }
 .text--blue{
   color: $colorBlue;
