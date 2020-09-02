@@ -1,0 +1,17 @@
+// PRESET VARIABLES
+@import '../../sass/presets';
+
+.footer{
+  margin-top: 2.5rem;
+  margin-bottom: 4.5rem;
+}
+.footer__p{
+  font-size: .75rem;
+  margin-bottom: .25rem;
+}
+@media(min-width:768px){
+  .footer{
+    margin-top: 3.5rem;
+    margin-bottom: 5.5rem;
+  }
+}
