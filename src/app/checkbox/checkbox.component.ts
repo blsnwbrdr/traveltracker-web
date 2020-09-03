@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, FormControl } from '@angular/forms';
 import { Countries } from '../service/countries';
 import { CountriesService } from '../service/countries.service';
 import { LocalStorageService } from '../service/local-storage.service';
@@ -12,19 +11,23 @@ import { LocalStorageService } from '../service/local-storage.service';
 
 export class CheckboxComponent implements OnInit {
   errorMessage = '';
+  selectedCountries = [];
   countries: Countries[] = [];
-  selectedCountries: FormGroup;
 
-  constructor(private fb: FormBuilder,
-              private countriesService: CountriesService,
-              private localStorageService: LocalStorageService
-            ) { }
+  constructor(
+    private countriesService: CountriesService,
+    private localStorageService: LocalStorageService
+  ){}
 
   ngOnInit(): void {
-    // import countries list data
+    // if there is local storage data, update selectedCountries array
+    if(this.localStorageService.get('data') !== null){
+      this.selectedCountries = this.localStorageService.get('data');
+    }
+    // import countries json data
     this.countriesService.getCountries().subscribe({
       next: countries => {
-        // sort array of data
+        // sort countries alphabetically by name
         countries.sort((a,b) => {
           if (a.name < b.name)
             return -1;
@@ -32,40 +35,35 @@ export class CheckboxComponent implements OnInit {
             return 1;
           return 0;
         });
+        // add checked property for selectedCountries from local storage
+        for(let countriesKey of countries){
+          for(let selectedCountriesKey of this.selectedCountries){
+            if(countriesKey.name === selectedCountriesKey){
+              countriesKey["checked"] = true;
+            }
+          }
+        }
         this.countries = countries;
       },
       error: err => this.errorMessage = err
-    });
-    // selected countries
-    this.selectedCountries = this.fb.group({
-      userSelectedCountries: this.fb.array([])
     });
   }
 
   // ON CHANGE CHECKBOX METHOD
   onChange(name: string, isChecked: boolean){
-    // user selected countries
-    const selectedCountriesArray = <FormArray>this.selectedCountries.controls.userSelectedCountries;
-    // update selected countries array with selected and deselected countries
+    // update selected countries data to local storage
     if(isChecked){
-      selectedCountriesArray.push(new FormControl(name));
+      this.selectedCountries.push(name);
+      this.saveData('data', this.selectedCountries);
     }else{
-      let index = selectedCountriesArray.controls.findIndex(x => x.value == name);
-      selectedCountriesArray.removeAt(index);
+      let index = this.selectedCountries.indexOf(name);
+      this.selectedCountries.splice(index, 1);
+      this.saveData('data', this.selectedCountries);
     }
-    // return selected countries array
-    // console.log(selectedCountriesArray.value);
-    this.saveData('list', selectedCountriesArray.value);
-    return selectedCountriesArray.value;
   }
 
   // SAVE DATA TO LOCAL STORAGE
   saveData(key: string, value: any){
     this.localStorageService.set(key, value);
-  }
-
-  // READ DATA FROM LOCAL STORAGE
-  readData(key: string){
-    this.localStorageService.get(key);
   }
 }

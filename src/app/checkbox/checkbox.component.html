@@ -1,12 +1,12 @@
 <div role="main" class="container">
   <div class="row">
     <div class="col-12">
-      <form [formGroup]="selectedCountries" class="list">
+      <div class="list">
         <div *ngFor="let country of countries" class="checkbox">
-          <input id="{{ country.name }}" class="checkbox__input" name="{{ country.name }}" type="checkbox" value="{{ country.name }}" (change)="onChange(country.name,$event.target.checked)">
+          <input id="{{ country.name }}" class="checkbox__input" name="{{ country.name }}" type="checkbox" value="{{ country.name }}" (change)="onChange(country.name,$event.target.checked)" [checked]="country.checked">
           <label class="checkbox__label" for="{{ country.name }}">{{ country.name }}</label>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
