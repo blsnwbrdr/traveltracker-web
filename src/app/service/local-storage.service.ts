@@ -11,6 +11,7 @@ export class LocalStorageService {
     this.localStorage = window.localStorage;
   }
 
+  // GET KEY
   get(key: string): any {
     if (this.isLocalStorageSupported) {
       return JSON.parse(this.localStorage.getItem(key));
@@ -18,6 +19,7 @@ export class LocalStorageService {
     return null;
   }
 
+  // SET KEY
   set(key: string, value: any): boolean {
     if (this.isLocalStorageSupported) {
       this.localStorage.setItem(key, JSON.stringify(value));
@@ -26,6 +28,7 @@ export class LocalStorageService {
     return false;
   }
 
+  // REMOVE KEY
   remove(key: string): boolean {
     if (this.isLocalStorageSupported) {
       this.localStorage.removeItem(key);
