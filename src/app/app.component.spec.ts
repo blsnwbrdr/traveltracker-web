@@ -1,15 +1,25 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { TitleComponent } from './components/title.component';
+import { FooterComponent } from './components/footer.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        HttpClientTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        CheckboxComponent,
+        TitleComponent,
+        FooterComponent
       ],
     }).compileComponents();
   }));
