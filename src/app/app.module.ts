@@ -8,14 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header.component';
 import { FooterComponent } from './components/footer.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
-    CheckboxComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
