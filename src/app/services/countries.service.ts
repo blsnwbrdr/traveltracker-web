@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
-import { Countries } from './countries';
+import { Countries } from '../interfaces/countries';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Countries } from '../service/countries';
-import { CountriesService } from '../service/countries.service';
-import { LocalStorageService } from '../service/local-storage.service';
+import { Countries } from '../interfaces/countries';
+import { CountriesService } from '../services/countries.service';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-checkbox',

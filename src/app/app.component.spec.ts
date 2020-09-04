@@ -3,10 +3,11 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpClientModule } from '@angular/common/http';
 
+// APP COMPONENTS
 import { AppComponent } from './app.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
-import { TitleComponent } from './components/title.component';
+import { HeaderComponent } from './components/header.component';
 import { FooterComponent } from './components/footer.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -17,9 +18,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        CheckboxComponent,
-        TitleComponent,
-        FooterComponent
+        HeaderComponent,
+        FooterComponent,
+        CheckboxComponent
       ],
     }).compileComponents();
   }));
