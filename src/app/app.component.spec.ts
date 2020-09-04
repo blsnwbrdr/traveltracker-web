@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header.component';
-import { FooterComponent } from './components/footer.component';
+import { HeaderComponent } from './shared/header.component';
+import { FooterComponent } from './shared/footer.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 
 describe('AppComponent', () => {

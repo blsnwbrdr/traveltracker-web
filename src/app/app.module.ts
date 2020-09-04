@@ -6,8 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header.component';
-import { FooterComponent } from './components/footer.component';
+import { HeaderComponent } from './shared/header.component';
+import { FooterComponent } from './shared/footer.component';
 
 @NgModule({
   declarations: [
