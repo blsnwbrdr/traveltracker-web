@@ -3,17 +3,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 // APP COMPONENTS
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { ListComponent } from './list/list.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CheckboxComponent
+    component: ListComponent
   },
   {
-    path: 'checkbox',
-    component: CheckboxComponent
+    path: 'list',
+    component: ListComponent
   },
   {
     path: 'user',
@@ -21,13 +21,13 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: CheckboxComponent
+    component: ListComponent
   }
 ];
 
 @NgModule({
   declarations: [
-    CheckboxComponent,
+    ListComponent,
     UserComponent
   ],
   imports: [

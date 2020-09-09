@@ -4,12 +4,12 @@ import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
-  selector: 'app-checkbox',
-  templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
 
-export class CheckboxComponent implements OnInit {
+export class ListComponent implements OnInit {
   errorMessage = '';
   selectedCountries = [];
   countries: Countries[] = [];
