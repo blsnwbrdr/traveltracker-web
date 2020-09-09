@@ -1,0 +1,24 @@
+// PRESET VARIABLES
+@import '../../sass/presets';
+
+.navbar{
+  padding: 0;
+  .container{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .fa, .fas, .far, .fal, .fad, .fab{
+    font-size: 1.25rem;
+  }
+  .nav-link{
+    display: inline-block;
+    font-size: .75rem;
+  }
+}
+.navbar--grey{
+  background-color: $colorLightGrey;
+  border-top: 1px solid $colorMediumGrey;
+}
+.active{
+  color: $colorAqua;
+}

@@ -1,10 +1,26 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark fixed-bottom">
+<nav class="navbar navbar-expand navbar--grey fixed-bottom">
   <div class="container">
-    <ul class="nav navbar-nav">
-      <li class="nav-item"><a class="nav-link" skipLocationChange routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">List</a></li>
-      <li class="nav-item"><a class="nav-link" skipLocationChange routerLink="map" routerLinkActive="active">Map</a></li>
-      <li class="nav-item"><a class="nav-link" skipLocationChange routerLink="user" routerLinkActive="active">User</a></li>
-      <li class="nav-item"><a class="nav-link" skipLocationChange routerLink="sharing" routerLinkActive="active">Sharing</a></li>
+    <ul class="nav navbar-nav nav-fill w-100">
+      <li class="nav-item">
+        <a class="nav-link" skipLocationChange routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+          <i class="fas fa-toggle-on"></i><br />Countries
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" skipLocationChange routerLink="map" routerLinkActive="active">
+          <i class="far fa-map"></i><br />My Map
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" skipLocationChange routerLink="user" routerLinkActive="active">
+          <i class="fas fa-list"></i><br />My List
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" skipLocationChange routerLink="sharing" routerLinkActive="active">
+          <i class="fab fa-slideshare"></i><br />Sharing
+        </a>
+      </li>
     </ul>
   </div>
 </nav>
