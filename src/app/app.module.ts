@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './shared/navigation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

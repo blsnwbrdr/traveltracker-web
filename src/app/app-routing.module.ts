@@ -16,10 +16,6 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: 'list',
-    component: ListComponent
-  },
-  {
     path: 'user',
     component: UserComponent
   },
