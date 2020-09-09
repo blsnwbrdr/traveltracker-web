@@ -6,6 +6,10 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { UserComponent } from './user/user.component';
 
+// SHARED COMPONENTS
+import { HeaderComponent } from './shared/header.component';
+import { FooterComponent } from './shared/footer.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -28,7 +32,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ListComponent,
-    UserComponent
+    UserComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
