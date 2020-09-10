@@ -29,7 +29,7 @@ export class CountriesService {
   getCountries(): Observable<Countries[]> {
     return this.http.get<Countries[]>(this.dataUrl)
       .pipe(
-        // tap(data => console.log('All: ' + JSON.stringify(data[0].latlng))),
+        tap(),
         catchError(this.handleError)
       );
   }
