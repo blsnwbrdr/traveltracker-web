@@ -3,8 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 // APP COMPONENTS
+import { MapComponent } from './map/map.component';
 import { ListComponent } from './list/list.component';
 import { UserComponent } from './user/user.component';
+import { SharingComponent } from './sharing/sharing.component';
 
 // SHARED COMPONENTS
 import { HeaderComponent } from './shared/header.component';
@@ -16,8 +18,16 @@ const routes: Routes = [
     component: ListComponent
   },
   {
+    path: 'map',
+    component: MapComponent
+  },
+  {
     path: 'user',
     component: UserComponent
+  },
+  {
+    path: 'sharing',
+    component: SharingComponent
   },
   {
     path: '**',
@@ -27,8 +37,10 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
+    MapComponent,
     ListComponent,
     UserComponent,
+    SharingComponent,
     HeaderComponent,
     FooterComponent
   ],

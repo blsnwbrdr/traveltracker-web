@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 // APP COMPONENTS
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './shared/navigation.component';
+import { MapComponent } from './map/map.component';
+import { SharingComponent } from './sharing/sharing.component';
 
 @NgModule({
   declarations: [
