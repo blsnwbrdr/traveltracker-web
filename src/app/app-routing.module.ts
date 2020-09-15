@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { GoogleMapsModule } from '@angular/google-maps'
+
 
 // APP COMPONENTS
 import { MapComponent } from './map/map.component';
@@ -46,6 +48,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    GoogleMapsModule,
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule]
