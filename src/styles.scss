@@ -3,6 +3,11 @@
 // PRESET VARIABLES
 @import 'sass/presets';
 
+html,
+body{
+  height: 100%;
+  width: 100%;
+}
 body{
   font-family: 'Titillium Web', Arial, sans-serif;
   color: $colorDarkGrey;
