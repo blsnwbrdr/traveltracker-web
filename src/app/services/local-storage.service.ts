@@ -5,13 +5,14 @@ import { Injectable } from '@angular/core';
 })
 
 export class LocalStorageService {
+  // VARIABLES
   localStorage: Storage;
 
   constructor() {
     this.localStorage = window.localStorage;
   }
 
-  // GET KEY
+  // GET LOCAL STORAGE KEY DATA METHOD
   get(key: string): any {
     if (this.isLocalStorageSupported) {
       return JSON.parse(this.localStorage.getItem(key));
@@ -19,7 +20,7 @@ export class LocalStorageService {
     return null;
   }
 
-  // SET KEY
+  // SET LOCAL STORAGE KEY DATA METHOD
   set(key: string, value: any): boolean {
     if (this.isLocalStorageSupported) {
       this.localStorage.setItem(key, JSON.stringify(value));
@@ -28,7 +29,7 @@ export class LocalStorageService {
     return false;
   }
 
-  // REMOVE KEY
+  // REMOVE LOCAL STORAGE KEY DATA METHOD
   remove(key: string): boolean {
     if (this.isLocalStorageSupported) {
       this.localStorage.removeItem(key);
@@ -37,6 +38,7 @@ export class LocalStorageService {
     return false;
   }
 
+  // LOCAL STORAGE SUPPORT CHECK METHOD
   get isLocalStorageSupported(): boolean {
     return !!this.localStorage
   }

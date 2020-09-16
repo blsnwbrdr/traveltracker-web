@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MapMarker } from '@angular/google-maps'
 
+// INTERFACES AND SERVICES
 import { Countries } from '../interfaces/countries';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
@@ -11,7 +12,7 @@ import { LocalStorageService } from '../services/local-storage.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  // map variables
+  // GOOGLE MAP VARIABLES
   height = '100%';
   width = '100%';
   zoom = 3;
@@ -25,11 +26,10 @@ export class MapComponent implements OnInit {
     minZoom: 2,
   }
   markers = [];
-  // data variables
+  // DATA VARIABLES
   errorMessage = '';
   selectedCountries = [];
   countries: Countries[] = [];
-
 
   constructor(
     private countriesService: CountriesService,
@@ -44,7 +44,7 @@ export class MapComponent implements OnInit {
         lng: position.coords.longitude,
       }
     })
-    // if there is local storage data, update selectedCountries array
+    // if there is local storage data, update selectedCountries array with data
     if(this.localStorageService.get('data') !== null){
       this.selectedCountries = this.localStorageService.get('data');
     }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+// INTERFACES AND SERVICES
 import { Countries } from '../interfaces/countries';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
@@ -10,6 +12,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 })
 
 export class ListComponent implements OnInit {
+  // VARIABLES
   errorMessage = '';
   selectedCountries = [];
   countries: Countries[] = [];
@@ -17,10 +20,10 @@ export class ListComponent implements OnInit {
   constructor(
     private countriesService: CountriesService,
     private localStorageService: LocalStorageService
-  ){}
+  ) { }
 
   ngOnInit(): void {
-    // if there is local storage data, update selectedCountries array
+    // if there is local storage data, update selectedCountries array with data
     if(this.localStorageService.get('data') !== null){
       this.selectedCountries = this.localStorageService.get('data');
     }
@@ -35,7 +38,7 @@ export class ListComponent implements OnInit {
             return 1;
           return 0;
         });
-        // add checked property for selectedCountries from local storage
+        // add 'checked' property for selectedCountries from local storage
         for(let countriesKey of countries){
           for(let selectedCountriesKey of this.selectedCountries){
             if(countriesKey.name === selectedCountriesKey){
@@ -50,7 +53,7 @@ export class ListComponent implements OnInit {
   }
 
   // ON CHANGE CHECKBOX METHOD
-  onChange(name: string, isChecked: boolean){
+  onChange(name: string, isChecked: boolean) {
     // update selected countries data to local storage
     if(isChecked){
       this.selectedCountries.push(name);
@@ -62,8 +65,8 @@ export class ListComponent implements OnInit {
     }
   }
 
-  // SAVE DATA TO LOCAL STORAGE
-  saveData(key: string, value: any){
+  // SAVE DATA TO LOCAL STORAGE METHOD
+  saveData(key: string, value: any) {
     this.localStorageService.set(key, value);
   }
 }

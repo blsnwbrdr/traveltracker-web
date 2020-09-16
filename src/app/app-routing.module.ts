@@ -3,10 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps'
 
-
 // APP COMPONENTS
-import { MapComponent } from './map/map.component';
 import { ListComponent } from './list/list.component';
+import { MapComponent } from './map/map.component';
 import { UserComponent } from './user/user.component';
 import { SharingComponent } from './sharing/sharing.component';
 
@@ -14,6 +13,7 @@ import { SharingComponent } from './sharing/sharing.component';
 import { HeaderComponent } from './shared/header.component';
 import { FooterComponent } from './shared/footer.component';
 
+// ROUTING
 const routes: Routes = [
   {
     path: '',
@@ -39,8 +39,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    MapComponent,
     ListComponent,
+    MapComponent,
     UserComponent,
     SharingComponent,
     HeaderComponent,
