@@ -45,8 +45,8 @@ export class MapComponent implements OnInit {
       }
     })
     // if there is local storage data, update selectedCountries array with data
-    if(this.localStorageService.get('data') !== null){
-      this.selectedCountries = this.localStorageService.get('data');
+    if(this.localStorageService.get('Visited') !== null){
+      this.selectedCountries = this.localStorageService.get('Visited');
     }
     // import countries json data
     this.countriesService.getCountries().subscribe({

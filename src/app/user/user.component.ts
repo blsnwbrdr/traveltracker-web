@@ -15,8 +15,8 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     // if there is local storage data, update selectedCountries array with data
-    if(this.localStorageService.get('data') !== null){
-      let localStorage = this.localStorageService.get('data');
+    if(this.localStorageService.get('Visited') !== null){
+      let localStorage = this.localStorageService.get('Visited');
       // sort selected countries alphabetically
       localStorage.sort((a,b) => {
         if (a < b)

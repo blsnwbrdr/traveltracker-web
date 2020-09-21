@@ -24,8 +24,8 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     // if there is local storage data, update selectedCountries array with data
-    if(this.localStorageService.get('data') !== null){
-      this.selectedCountries = this.localStorageService.get('data');
+    if(this.localStorageService.get('Visited') !== null){
+      this.selectedCountries = this.localStorageService.get('Visited');
     }
     // import countries json data
     this.countriesService.getCountries().subscribe({
@@ -57,11 +57,11 @@ export class ListComponent implements OnInit {
     // update selected countries data to local storage
     if(isChecked){
       this.selectedCountries.push(name);
-      this.saveData('data', this.selectedCountries);
+      this.saveData('Visited', this.selectedCountries);
     }else{
       let index = this.selectedCountries.indexOf(name);
       this.selectedCountries.splice(index, 1);
-      this.saveData('data', this.selectedCountries);
+      this.saveData('Visited', this.selectedCountries);
     }
   }
 
