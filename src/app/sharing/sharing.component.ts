@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sharing.component.scss']
 })
 export class SharingComponent implements OnInit {
+  usernameInputDisplay:boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
+    // this.usernameInputDisplay = false;
   }
 
 }

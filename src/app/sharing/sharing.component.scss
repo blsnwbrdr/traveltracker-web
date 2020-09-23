@@ -1,0 +1,29 @@
+// PRESET VARIABLES
+@import '../../sass/presets';
+
+// USERNAME INPUT
+.usernameInput{
+
+}
+.usernameInput__input{
+  display: block;
+  margin: 2rem auto;
+  padding: .625rem;
+  border: .125rem solid $colorDarkGrey;
+  border-radius: .25rem;
+  color: $colorDarkGrey;
+  font-size: 1.25rem;
+}
+.usernameInput__button{
+  display: block;
+  margin: 0 auto;
+
+}
+
+// USERNAME AND SHARE
+.usernameAndShare{
+
+}
+.usernameAndShare__button{
+
+}
