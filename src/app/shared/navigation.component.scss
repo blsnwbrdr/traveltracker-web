@@ -2,11 +2,11 @@
 @import '../../sass/presets';
 
 .navbar{
-  height: 60px;
+  height: 4rem;
   padding: 0;
   .container{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .fa, .fas, .far, .fal, .fad, .fab{
     font-size: 1.25rem;
@@ -18,7 +18,7 @@
 }
 .navbar--grey{
   background-color: $colorLightGrey;
-  border-top: 1px solid $colorMediumGrey;
+  border-top: .0625rem solid $colorMediumGrey;
 }
 .active{
   color: $colorAqua;
