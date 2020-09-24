@@ -3,11 +3,14 @@
   <div class="row justify-content-center">
     <div class="col-lg-6">
       <div class="sharing text-center">
+        <!-- USERNAME INPUT DISPLAY -->
         <div class="usernameInput" *ngIf="usernameInputDisplay; else usernameAndShare">
           <p class="h4 text--blue">Create a username to share&nbsp;your&nbsp;list</p>
           <input class="usernameInput__input" type="text" name="username" placeholder="Create Username" maxLength="12">
+          <p class="usernameInput__alert text--red">Username taken</p>
           <button class="usernameInput__button" type="button" name="button">Send</button>
         </div>
+        <!-- USERNAME AND SHARE DISPLAY -->
         <ng-template #usernameAndShare>
           <div class="usernameAndShare">
             <p class="h4 text--blue">Username</p>
