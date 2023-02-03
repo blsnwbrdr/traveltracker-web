@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 // APP COMPONENTS
 import { ListComponent } from './list/list.component';
@@ -17,24 +18,24 @@ import { FooterComponent } from './shared/footer.component';
 const routes: Routes = [
   {
     path: '',
-    component: ListComponent
+    component: ListComponent,
   },
   {
     path: 'map',
-    component: MapComponent
+    component: MapComponent,
   },
   {
     path: 'user',
-    component: UserComponent
+    component: UserComponent,
   },
   {
     path: 'sharing',
-    component: SharingComponent
+    component: SharingComponent,
   },
   {
     path: '**',
-    component: ListComponent
-  }
+    component: ListComponent,
+  },
 ];
 
 @NgModule({
@@ -44,13 +45,15 @@ const routes: Routes = [
     UserComponent,
     SharingComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
     GoogleMapsModule,
-    RouterModule.forRoot(routes, {})
+    RouterModule.forRoot(routes, {}),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

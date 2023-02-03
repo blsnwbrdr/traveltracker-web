@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 // INTERFACES AND SERVICES
 import { Countries } from '../interfaces/countries';
@@ -12,6 +15,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 })
 export class MapComponent implements OnInit {
   // GOOGLE MAP VARIABLES
+  apiLoaded: Observable<boolean>;
   height = '100%';
   width = '100%';
   zoom = 3;
@@ -31,9 +35,20 @@ export class MapComponent implements OnInit {
   countries: Countries[] = [];
 
   constructor(
+    httpClient: HttpClient,
     private countriesService: CountriesService,
     private localStorageService: LocalStorageService
-  ) {}
+  ) {
+    this.apiLoaded = httpClient
+      .jsonp(
+        'https://maps.googleapis.com/maps/api/js?key=AIzaSyB-N28oDuRuNqy9ScUMxMTVpOSZCbQ1EO8',
+        'callback'
+      )
+      .pipe(
+        map(() => true),
+        catchError(() => of(false))
+      );
+  }
 
   ngOnInit(): void {
     // get current position for map centering
