@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {} from '@angular/google-maps';
 
 // INTERFACES AND SERVICES
 import { Countries } from '../interfaces/countries';
