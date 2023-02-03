@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
 
 // INTERFACES AND SERVICES
 import { Countries } from '../interfaces/countries';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
+import { MapService } from '../services/map.service';
 
 @Component({
   selector: 'app-map',
@@ -15,7 +13,7 @@ import { LocalStorageService } from '../services/local-storage.service';
 })
 export class MapComponent implements OnInit {
   // GOOGLE MAP VARIABLES
-  apiLoaded: Observable<boolean>;
+  apiLoaded!: boolean;
   height = '100%';
   width = '100%';
   zoom = 3;
@@ -35,22 +33,16 @@ export class MapComponent implements OnInit {
   countries: Countries[] = [];
 
   constructor(
-    httpClient: HttpClient,
+    private mapService: MapService,
     private countriesService: CountriesService,
     private localStorageService: LocalStorageService
-  ) {
-    this.apiLoaded = httpClient
-      .jsonp(
-        'https://maps.googleapis.com/maps/api/js?key=AIzaSyB-N28oDuRuNqy9ScUMxMTVpOSZCbQ1EO8',
-        'callback'
-      )
-      .pipe(
-        map(() => true),
-        catchError(() => of(false))
-      );
-  }
+  ) {}
 
   ngOnInit(): void {
+    // get api to load map
+    this.mapService.obsCurrentApiStatus.subscribe((status) => {
+      this.apiLoaded = status.valueOf();
+    });
     // get current position for map centering
     navigator.geolocation.getCurrentPosition((position) => {
       this.center = {
