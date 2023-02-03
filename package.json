@@ -6,6 +6,7 @@
     "build": "ng build",
     "e2e": "ng e2e",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
