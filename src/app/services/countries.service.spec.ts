@@ -7,15 +7,11 @@ import { CountriesService } from './countries.service';
 describe('CountriesService', () => {
   let service: CountriesService;
 
-  beforeEach(() =>
+  beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [CountriesService],
-    })
-  );
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
+    });
     service = TestBed.inject(CountriesService);
   });
 
