@@ -49,7 +49,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     GoogleMapsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })
   ],
   exports: [RouterModule]
 })
