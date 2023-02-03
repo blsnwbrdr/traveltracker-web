@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
+// COMPONENTS
 import { SharingComponent } from './sharing.component';
+import { HeaderComponent } from '../shared/header.component';
+import { FooterComponent } from '../shared/footer.component';
 
 describe('SharingComponent', () => {
   let component: SharingComponent;
@@ -8,9 +11,8 @@ describe('SharingComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ SharingComponent ]
-    })
-    .compileComponents();
+      declarations: [SharingComponent, HeaderComponent, FooterComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
