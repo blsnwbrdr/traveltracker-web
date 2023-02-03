@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
+// COMPONENTS
 import { UserComponent } from './user.component';
+import { HeaderComponent } from '../shared/header.component';
+import { FooterComponent } from '../shared/footer.component';
 
 describe('UserComponent', () => {
   let component: UserComponent;
@@ -8,9 +11,8 @@ describe('UserComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserComponent ]
-    })
-    .compileComponents();
+      declarations: [UserComponent, HeaderComponent, FooterComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
