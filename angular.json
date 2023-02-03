@@ -111,6 +111,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "traveltracker-ng-app"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
