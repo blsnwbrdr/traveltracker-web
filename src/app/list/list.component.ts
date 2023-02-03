@@ -39,8 +39,8 @@ export class ListComponent implements OnInit {
           return 0;
         });
         // add 'checked' property for selectedCountries from local storage
-        for(let countriesKey of countries){
-          for(let selectedCountriesKey of this.selectedCountries){
+        for(const countriesKey of countries){
+          for(const selectedCountriesKey of this.selectedCountries){
             if(countriesKey.name === selectedCountriesKey){
               countriesKey["checked"] = true;
             }
@@ -59,7 +59,7 @@ export class ListComponent implements OnInit {
       this.selectedCountries.push(name);
       this.saveData('Visited', this.selectedCountries);
     }else{
-      let index = this.selectedCountries.indexOf(name);
+      const index = this.selectedCountries.indexOf(name);
       this.selectedCountries.splice(index, 1);
       this.saveData('Visited', this.selectedCountries);
     }

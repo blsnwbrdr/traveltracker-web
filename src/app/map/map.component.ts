@@ -52,8 +52,8 @@ export class MapComponent implements OnInit {
     this.countriesService.getCountries().subscribe({
       next: countries => {
         // push lat/lng positions to markers array
-        for(let countriesKey of countries){
-          for(let selectedCountriesKey of this.selectedCountries){
+        for(const countriesKey of countries){
+          for(const selectedCountriesKey of this.selectedCountries){
             if(countriesKey.name === selectedCountriesKey){
               this.markers.push({
                 position: {
