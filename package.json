@@ -2,12 +2,13 @@
   "name": "traveltracker-ng-app",
   "version": "1.0.0",
   "scripts": {
+    "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
