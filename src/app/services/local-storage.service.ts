@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class LocalStorageService {
   // VARIABLES
   localStorage: Storage;
@@ -13,7 +12,7 @@ export class LocalStorageService {
   }
 
   // GET LOCAL STORAGE KEY DATA METHOD
-  get(key: string): any {
+  get(key: string): Array<string> {
     if (this.isLocalStorageSupported) {
       return JSON.parse(this.localStorage.getItem(key));
     }
@@ -21,7 +20,7 @@ export class LocalStorageService {
   }
 
   // SET LOCAL STORAGE KEY DATA METHOD
-  set(key: string, value: any): boolean {
+  set(key: string, value: Array<string>): boolean {
     if (this.isLocalStorageSupported) {
       this.localStorage.setItem(key, JSON.stringify(value));
       return true;
@@ -40,6 +39,6 @@ export class LocalStorageService {
 
   // LOCAL STORAGE SUPPORT CHECK METHOD
   get isLocalStorageSupported(): boolean {
-    return !!this.localStorage
+    return !!this.localStorage;
   }
 }

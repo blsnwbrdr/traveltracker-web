@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, tap, map } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 
 // INTERFACES
 import { Countries } from '../interfaces/countries';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class CountriesService {
   // DEFINE PRIVATE DATA LOCATION
   private dataUrl = 'assets/data/countries.json';
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
   // PRIVATE HTTP ERROR HANDLING METHOD
   private handleError(err: HttpErrorResponse): Observable<never> {
@@ -32,10 +29,8 @@ export class CountriesService {
 
   // GET COUNTRIES METHOD
   getCountries(): Observable<Countries[]> {
-    return this.http.get<Countries[]>(this.dataUrl)
-      .pipe(
-        tap(),
-        catchError(this.handleError)
-      );
+    return this.http
+      .get<Countries[]>(this.dataUrl)
+      .pipe(tap(), catchError(this.handleError));
   }
 }
