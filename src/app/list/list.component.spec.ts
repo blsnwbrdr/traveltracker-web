@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+// COMPONENTS
 import { ListComponent } from './list.component';
+import { HeaderComponent } from '../shared/header.component';
+import { FooterComponent } from '../shared/footer.component';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -10,10 +12,9 @@ describe('ListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientTestingModule ],
-      declarations: [ ListComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientTestingModule],
+      declarations: [ListComponent, HeaderComponent, FooterComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
