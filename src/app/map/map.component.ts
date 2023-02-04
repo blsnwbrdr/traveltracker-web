@@ -18,7 +18,10 @@ export class MapComponent implements OnInit {
   height = '100%';
   width = '100%';
   zoom = 3;
-  center: google.maps.LatLngLiteral;
+  center: google.maps.LatLngLiteral = {
+    lat: 34,
+    lng: 9,
+  };
   options: google.maps.MapOptions = {
     mapTypeId: 'roadmap',
     zoomControl: true,
@@ -43,13 +46,6 @@ export class MapComponent implements OnInit {
     // get api to load map
     this.mapService.obsCurrentApiStatus.subscribe((status) => {
       this.apiLoaded = status.valueOf();
-    });
-    // get current position for map centering
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.center = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
     });
     // if there is local storage data, update selectedCountries array with data
     if (this.localStorageService.get('Visited') !== null) {
