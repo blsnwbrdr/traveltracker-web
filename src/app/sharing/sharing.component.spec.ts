@@ -2,8 +2,8 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 // COMPONENTS
 import { SharingComponent } from './sharing.component';
-import { HeaderComponent } from '../shared/header.component';
-import { FooterComponent } from '../shared/footer.component';
+import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 describe('SharingComponent', () => {
   let component: SharingComponent;
