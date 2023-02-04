@@ -11,8 +11,8 @@ import { UserComponent } from './user/user.component';
 import { SharingComponent } from './sharing/sharing.component';
 
 // SHARED COMPONENTS
-import { HeaderComponent } from './shared/header.component';
-import { FooterComponent } from './shared/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 // ROUTING
 const routes: Routes = [

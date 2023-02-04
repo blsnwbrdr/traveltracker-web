@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 // APP COMPONENTS
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './shared/navigation.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],

@@ -4,7 +4,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './shared/navigation.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
