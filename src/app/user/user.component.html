@@ -3,7 +3,12 @@
   <div class="row justify-content-center">
     <div class="col-lg-6">
       <div class="user text-center">
-        <p class="h4 text--blue">You have visited {{ selectedCountries.length }} ({{ selectedCountries.length / 242 | percent }} of 242) countries/territories.</p>
+        <p class="h4 text--blue">
+          You have visited {{ selectedCountries.length }} ({{
+            selectedCountries.length / 242 | percent
+          }}
+          of 242) countries/territories.
+        </p>
         <ul class="user__list">
           <li *ngFor="let selected of selectedCountries">{{ selected }}</li>
         </ul>

@@ -1,25 +1,30 @@
 // PRESET VARIABLES
-@import '../../sass/presets';
+@import "../../sass/presets";
 
-.navbar{
+.navbar {
   height: 4rem;
   padding: 0;
-  .container{
+  .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .fa, .fas, .far, .fal, .fad, .fab{
+  .fa,
+  .fas,
+  .far,
+  .fal,
+  .fad,
+  .fab {
     font-size: 1.25rem;
   }
-  .nav-link{
+  .nav-link {
     display: inline-block;
-    font-size: .75rem;
+    font-size: 0.75rem;
   }
 }
-.navbar--grey{
+.navbar--grey {
   background-color: $colorLightGrey;
-  border-top: .0625rem solid $colorMediumGrey;
+  border-top: 0.0625rem solid $colorMediumGrey;
 }
-.active{
+.active {
   color: $colorAqua;
 }
