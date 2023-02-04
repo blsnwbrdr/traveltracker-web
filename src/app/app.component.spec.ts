@@ -9,14 +9,8 @@ import { NavigationComponent } from './shared/navigation.component';
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        HttpClientTestingModule
-      ],
-      declarations: [
-        AppComponent,
-        NavigationComponent,
-      ],
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      declarations: [AppComponent, NavigationComponent],
     }).compileComponents();
   }));
 

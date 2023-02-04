@@ -1,29 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Chewy|Titillium+Web');
+@import url("https://fonts.googleapis.com/css?family=Chewy|Titillium+Web");
 
 // PRESET VARIABLES
-@import 'sass/presets';
+@import "sass/presets";
 
 html,
-body{
+body {
   height: 100%;
   width: 100%;
 }
-body{
-  font-family: 'Titillium Web', Arial, sans-serif;
+body {
+  font-family: "Titillium Web", Arial, sans-serif;
   color: $colorDarkGrey;
 }
-a{
+a {
   color: $colorDarkGrey;
-  &:hover{
+  &:hover {
     color: $colorBlue;
   }
 }
-.text--blue{
+.text--blue {
   color: $colorBlue;
 }
-.text--aqua{
+.text--aqua {
   color: $colorAqua;
 }
-.text--red{
+.text--red {
   color: $colorRed;
 }

@@ -1,32 +1,28 @@
 // PRESET VARIABLES
-@import '../../sass/presets';
+@import "../../sass/presets";
 
 // USERNAME INPUT
-.usernameInput{
-
+.usernameInput {
 }
-.usernameInput__input{
+.usernameInput__input {
   display: block;
   margin: 2rem auto 0;
-  padding: .625rem;
-  border: .125rem solid $colorDarkGrey;
-  border-radius: .25rem;
+  padding: 0.625rem;
+  border: 0.125rem solid $colorDarkGrey;
+  border-radius: 0.25rem;
   width: 15rem;
   color: $colorDarkGrey;
 }
-.usernameInput__alert{
+.usernameInput__alert {
   height: 1.5rem;
 }
-.usernameInput__button{
+.usernameInput__button {
   display: block;
   margin: 0 auto;
-
 }
 
 // USERNAME AND SHARE
-.usernameAndShare{
-
+.usernameAndShare {
 }
-.usernameAndShare__button{
-
+.usernameAndShare__button {
 }
