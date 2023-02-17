@@ -8,7 +8,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { ListComponent } from './list/list.component';
 import { MapComponent } from './map/map.component';
 import { UserComponent } from './user/user.component';
-import { SharingComponent } from './sharing/sharing.component';
 
 // SHARED COMPONENTS
 import { HeaderComponent } from './shared/header/header.component';
@@ -29,10 +28,6 @@ const routes: Routes = [
     component: UserComponent,
   },
   {
-    path: 'sharing',
-    component: SharingComponent,
-  },
-  {
     path: '**',
     component: ListComponent,
   },
@@ -43,7 +38,6 @@ const routes: Routes = [
     ListComponent,
     MapComponent,
     UserComponent,
-    SharingComponent,
     HeaderComponent,
     FooterComponent,
   ],

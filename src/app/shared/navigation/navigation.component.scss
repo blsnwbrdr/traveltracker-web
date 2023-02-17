@@ -4,6 +4,10 @@
 .navbar {
   height: 4rem;
   padding: 0;
+  &.navbar--grey {
+    background-color: $colorLightGrey;
+    border-top: 0.0625rem solid $colorMediumGrey;
+  }
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -19,12 +23,8 @@
   .nav-link {
     display: inline-block;
     font-size: 0.75rem;
+    &.active {
+      color: $colorAqua;
+    }
   }
-}
-.navbar--grey {
-  background-color: $colorLightGrey;
-  border-top: 0.0625rem solid $colorMediumGrey;
-}
-.active {
-  color: $colorAqua;
 }
