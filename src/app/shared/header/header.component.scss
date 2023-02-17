@@ -4,17 +4,17 @@
 .header {
   margin-top: 1.25rem;
   margin-bottom: 1.5rem;
-}
-.header__h1 {
-  font-family: "Chewy", Arial, sans-serif;
-  font-size: 3rem;
+  .header__h1 {
+    font-family: "Chewy", Arial, sans-serif;
+    font-size: 3rem;
+  }
 }
 
 @media (min-width: 768px) {
   .header {
     margin-bottom: 2rem;
-  }
-  .header__h1 {
-    font-size: 5rem;
+    .header__h1 {
+      font-size: 5rem;
+    }
   }
 }

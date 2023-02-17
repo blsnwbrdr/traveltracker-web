@@ -19,25 +19,26 @@
 // CHECKBOXES
 .checkbox {
   width: 100%;
+  .checkbox__input {
+    display: none;
+  }
+  .checkbox__label {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 0.125rem solid $colorAqua;
+    border-radius: 0.25rem;
+    background-color: $colorBlue;
+    text-align: center;
+    color: white;
+  }
+  .checkbox__input:checked ~ .checkbox__label {
+    border-color: $colorBlue;
+    background-color: white;
+    color: $colorBlue;
+  }
 }
-.checkbox__input {
-  display: none;
-}
-.checkbox__label {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 0.75rem;
-  border: 0.125rem solid $colorAqua;
-  border-radius: 0.25rem;
-  background-color: $colorBlue;
-  text-align: center;
-  color: white;
-}
-.checkbox__input:checked ~ .checkbox__label {
-  border-color: $colorBlue;
-  background-color: white;
-  color: $colorBlue;
-}
+
 @media (min-width: 768px) {
   .checkbox__label {
     margin-bottom: 1rem;
