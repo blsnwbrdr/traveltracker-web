@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {} from '@angular/google-maps';
 
-// INTERFACES AND SERVICES
-import { Countries } from '../interfaces/countries';
+// INTERFACES
+import { ICountry } from '../interfaces/country.model';
+
+// MODELS
+import { Marker } from '../models/marker.model';
+
+// SERVICES
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
@@ -13,7 +18,10 @@ import { MapService } from '../services/map.service';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
-  // GOOGLE MAP VARIABLES
+  errorMessage!: string;
+  selectedCountries!: Array<string>;
+  countries!: ICountry[];
+  // GOOGLE MAP
   apiLoaded!: boolean;
   height = '100%';
   width = '100%';
@@ -30,11 +38,7 @@ export class MapComponent implements OnInit {
     maxZoom: 10,
     minZoom: 2,
   };
-  markers = [];
-  // DATA VARIABLES
-  errorMessage = '';
-  selectedCountries = [];
-  countries: Countries[] = [];
+  markers: Marker[] = [];
 
   constructor(
     private mapService: MapService,
@@ -53,9 +57,9 @@ export class MapComponent implements OnInit {
     }
     // import countries json data
     this.countriesService.getCountries().subscribe({
-      next: (countries) => {
+      next: (data: ICountry[]) => {
         // push lat/lng positions to markers array
-        for (const countriesKey of countries) {
+        for (const countriesKey of data) {
           for (const selectedCountriesKey of this.selectedCountries) {
             if (countriesKey.name === selectedCountriesKey) {
               this.markers.push({
@@ -67,7 +71,7 @@ export class MapComponent implements OnInit {
             }
           }
         }
-        this.countries = countries;
+        this.countries = data;
       },
       error: (err) => (this.errorMessage = err),
     });

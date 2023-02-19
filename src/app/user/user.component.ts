@@ -7,7 +7,7 @@ import { LocalStorageService } from '../services/local-storage.service';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  selectedCountries = [];
+  selectedCountries!: Array<string>;
 
   constructor(private localStorageService: LocalStorageService) {}
 
@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
     if (this.localStorageService.get('Visited') !== null) {
       const localStorage = this.localStorageService.get('Visited');
       // sort selected countries alphabetically
-      localStorage.sort((a, b) => {
+      localStorage.sort((a: string, b: string) => {
         if (a < b) return -1;
         if (a > b) return 1;
         return 0;
