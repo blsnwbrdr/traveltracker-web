@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 // INTERFACES
-import { ICountry } from '../interfaces/country';
+import { ICountry } from '../interfaces/country.model';
 
 @Injectable({
   providedIn: 'root',

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {} from '@angular/google-maps';
 
 // INTERFACES AND SERVICES
-import { ICountry } from '../interfaces/country';
+import { ICountry } from '../interfaces/country.model';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
