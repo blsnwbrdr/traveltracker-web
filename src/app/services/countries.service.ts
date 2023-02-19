@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 // INTERFACES
-import { Countries } from '../interfaces/countries';
+import { ICountry } from '../interfaces/country';
 
 @Injectable({
   providedIn: 'root',
@@ -28,9 +28,9 @@ export class CountriesService {
   }
 
   // GET COUNTRIES METHOD
-  getCountries(): Observable<Countries[]> {
+  getCountries(): Observable<ICountry[]> {
     return this.http
-      .get<Countries[]>(this.dataUrl)
+      .get<ICountry[]>(this.dataUrl)
       .pipe(tap(), catchError(this.handleError));
   }
 }

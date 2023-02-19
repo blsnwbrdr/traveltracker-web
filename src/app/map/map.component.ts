@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {} from '@angular/google-maps';
 
 // INTERFACES AND SERVICES
-import { Countries } from '../interfaces/countries';
+import { ICountry } from '../interfaces/country';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
@@ -34,7 +34,7 @@ export class MapComponent implements OnInit {
   // DATA VARIABLES
   errorMessage = '';
   selectedCountries = [];
-  countries: Countries[] = [];
+  countries: ICountry[];
 
   constructor(
     private mapService: MapService,
