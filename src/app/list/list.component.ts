@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-// INTERFACES AND SERVICES
+// INTERFACES
 import { ICountry } from '../interfaces/country.model';
+
+// SERVICES
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 
@@ -11,7 +13,6 @@ import { LocalStorageService } from '../services/local-storage.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  // VARIABLES
   errorMessage!: string;
   selectedCountries!: Array<string>;
   countries!: ICountry[];

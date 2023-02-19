@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-// CONFIG
+// CONFIGS
 import { Configs } from '../configs/configs.service';
 
 @Injectable({

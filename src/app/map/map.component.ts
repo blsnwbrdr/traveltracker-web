@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {} from '@angular/google-maps';
 
-// INTERFACES AND SERVICES
+// INTERFACES
 import { ICountry } from '../interfaces/country.model';
+
+// MODELS
 import { Marker } from '../models/marker.model';
+
+// SERVICES
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
@@ -14,7 +18,10 @@ import { MapService } from '../services/map.service';
   styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements OnInit {
-  // GOOGLE MAP VARIABLES
+  errorMessage!: string;
+  selectedCountries!: Array<string>;
+  countries!: ICountry[];
+  // GOOGLE MAP
   apiLoaded!: boolean;
   height = '100%';
   width = '100%';
@@ -32,10 +39,6 @@ export class MapComponent implements OnInit {
     minZoom: 2,
   };
   markers: Marker[] = [];
-  // DATA VARIABLES
-  errorMessage!: string;
-  selectedCountries!: Array<string>;
-  countries!: ICountry[];
 
   constructor(
     private mapService: MapService,
