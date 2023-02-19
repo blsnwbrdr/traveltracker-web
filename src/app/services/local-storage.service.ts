@@ -13,7 +13,7 @@ export class LocalStorageService {
 
   // GET LOCAL STORAGE KEY DATA METHOD
   get(key: string): Array<string> {
-    if (this.isLocalStorageSupported) {
+    if (this.isLocalStorageSupported && this.localStorage.getItem(key)) {
       return JSON.parse(this.localStorage.getItem(key) || '');
     }
     return [];
