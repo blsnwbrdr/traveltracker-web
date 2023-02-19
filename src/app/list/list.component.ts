@@ -12,9 +12,9 @@ import { LocalStorageService } from '../services/local-storage.service';
 })
 export class ListComponent implements OnInit {
   // VARIABLES
-  errorMessage = '';
-  selectedCountries = [];
-  countries: ICountry[];
+  errorMessage!: string;
+  selectedCountries!: Array<string>;
+  countries!: ICountry[];
 
   constructor(
     private countriesService: CountriesService,
@@ -28,22 +28,22 @@ export class ListComponent implements OnInit {
     }
     // import countries json data
     this.countriesService.getCountries().subscribe({
-      next: (countries) => {
+      next: (data: ICountry[]) => {
         // sort countries alphabetically by name
-        countries.sort((a, b) => {
+        data.sort((a, b) => {
           if (a.name < b.name) return -1;
           if (a.name > b.name) return 1;
           return 0;
         });
         // add 'checked' property for selectedCountries from local storage
-        for (const countriesKey of countries) {
+        for (const countriesKey of data) {
           for (const selectedCountriesKey of this.selectedCountries) {
             if (countriesKey.name === selectedCountriesKey) {
               countriesKey['checked'] = true;
             }
           }
         }
-        this.countries = countries;
+        this.countries = data;
       },
       error: (err) => (this.errorMessage = err),
     });

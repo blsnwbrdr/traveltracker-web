@@ -3,6 +3,7 @@ import {} from '@angular/google-maps';
 
 // INTERFACES AND SERVICES
 import { ICountry } from '../interfaces/country.model';
+import { Marker } from '../models/marker.model';
 import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
@@ -30,11 +31,11 @@ export class MapComponent implements OnInit {
     maxZoom: 10,
     minZoom: 2,
   };
-  markers = [];
+  markers: Marker[] = [];
   // DATA VARIABLES
-  errorMessage = '';
-  selectedCountries = [];
-  countries: ICountry[];
+  errorMessage!: string;
+  selectedCountries!: Array<string>;
+  countries!: ICountry[];
 
   constructor(
     private mapService: MapService,
@@ -53,9 +54,9 @@ export class MapComponent implements OnInit {
     }
     // import countries json data
     this.countriesService.getCountries().subscribe({
-      next: (countries) => {
+      next: (data: ICountry[]) => {
         // push lat/lng positions to markers array
-        for (const countriesKey of countries) {
+        for (const countriesKey of data) {
           for (const selectedCountriesKey of this.selectedCountries) {
             if (countriesKey.name === selectedCountriesKey) {
               this.markers.push({
@@ -67,7 +68,7 @@ export class MapComponent implements OnInit {
             }
           }
         }
-        this.countries = countries;
+        this.countries = data;
       },
       error: (err) => (this.errorMessage = err),
     });
