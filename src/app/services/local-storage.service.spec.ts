@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 // SERVICES
 import { LocalStorageService } from './local-storage.service';
@@ -7,13 +7,22 @@ describe('LocalStorageService', () => {
   let localStorageService: LocalStorageService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [LocalStorageService],
+    });
     localStorageService = TestBed.inject(LocalStorageService);
   });
 
-  it('should be created', () => {
+  it('should create', () => {
     expect(localStorageService).toBeTruthy();
   });
+
+  it('should be initialized', inject(
+    [LocalStorageService],
+    (localStorageService: LocalStorageService) => {
+      expect(localStorageService).toBeTruthy();
+    }
+  ));
 
   it('#get should be called and return value', () => {
     spyOn(Object.getPrototypeOf(localStorage), 'getItem');

@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
@@ -22,9 +22,16 @@ describe('CountriesService', () => {
     countriesService = new CountriesService(httpClientSpy);
   });
 
-  it('should be created', () => {
+  it('should create', () => {
     expect(countriesService).toBeTruthy();
   });
+
+  it('should be initialized', inject(
+    [CountriesService],
+    (countriesService: CountriesService) => {
+      expect(countriesService).toBeTruthy();
+    }
+  ));
 
   it('should return expected countries (HttpClient called once)', (done: DoneFn) => {
     const expectedCountries: ICountry[] = [
@@ -36,7 +43,9 @@ describe('CountriesService', () => {
 
     countriesService.getCountries().subscribe({
       next: (data) => {
-        expect(data).withContext('expected heroes').toEqual(expectedCountries);
+        expect(data)
+          .withContext('expected countries')
+          .toEqual(expectedCountries);
         done();
       },
       error: done.fail,
