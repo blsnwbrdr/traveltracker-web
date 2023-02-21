@@ -33,7 +33,7 @@ describe('CountriesService', () => {
     }
   ));
 
-  it('should return expected countries (HttpClient called once)', (done: DoneFn) => {
+  it('#getCountries should return expected countries (HttpClient called once)', (done: DoneFn) => {
     const expectedCountries: ICountry[] = [
       { name: 'A', continent: 'AA', latlng: [], checked: false },
       { name: 'B', continent: 'BB', latlng: [], checked: true },
