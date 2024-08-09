@@ -700,7 +700,7 @@
     "latlng": ["9", "168"]
   },
   {
-    "name": "Macedonia",
+    "name": "North Macedonia",
     "continent": "Europe",
     "latlng": ["41.83333333", "22"]
   },
@@ -1208,5 +1208,10 @@
     "name": "Zimbabwe",
     "continent": "Africa",
     "latlng": ["-20", "30"]
+  },
+  {
+    "name": "Bonaire",
+    "continent": "North America",
+    "latlng": ["12.15", "-68.266667"]
   }
 ]
