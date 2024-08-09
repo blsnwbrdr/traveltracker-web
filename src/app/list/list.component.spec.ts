@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { DebugElement } from '@angular/core';
 
 // COMPONENTS
@@ -9,6 +9,7 @@ import { FooterComponent } from '../shared/footer/footer.component';
 
 // INTERFACES
 import { ICountry } from '../interfaces/country.model';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -21,9 +22,10 @@ describe('ListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      declarations: [ListComponent, HeaderComponent, FooterComponent],
-    }).compileComponents();
+    declarations: [ListComponent, HeaderComponent, FooterComponent],
+    imports: [],
+    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
+}).compileComponents();
   }));
 
   beforeEach(() => {
