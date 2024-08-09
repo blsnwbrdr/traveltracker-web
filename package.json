@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
-    "build": "ng build --base-href /portfolio/traveltracker/",
+    "build": "ng build --configuration production --base-href /portfolio/traveltracker/",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
@@ -44,7 +44,6 @@
     "@types/node": "^22.2.0",
     "@typescript-eslint/eslint-plugin": "^8.0.1",
     "@typescript-eslint/parser": "^8.0.1",
-    "codelyzer": "^6.0.0",
     "eslint": "^9.9.0",
     "jasmine-core": "^5.2.0",
     "jasmine-spec-reporter": "^7.0.0",
@@ -53,9 +52,7 @@
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-jasmine": "^5.1.0",
     "karma-jasmine-html-reporter": "^2.1.0",
-    "protractor": "~7.0.0",
     "ts-node": "^10.9.2",
-    "tslint": "~6.1.0",
     "typescript": "^5.5.4"
   }
 }
