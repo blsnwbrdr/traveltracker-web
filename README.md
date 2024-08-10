@@ -4,7 +4,7 @@ Travel Tracker - Where Next?
 
 Ever wanted to track the countries/territories you've traveled to?
 
-Scroll through 247 countries/territories and toggle the places that you have visited. View the map or list with your selected countries/territories that you have been to.
+Scroll through 243 countries/territories and toggle the places that you have visited. View the map or list with your selected countries/territories that you have been to.
 
 **FEATURES:**
 
