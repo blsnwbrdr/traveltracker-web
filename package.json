@@ -4,6 +4,7 @@
   "scripts": {
     "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
     "build": "ng build --configuration production --base-href /portfolio/traveltracker/",
+    "cy:open": "cypress open",
     "e2e": "ng e2e",
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
