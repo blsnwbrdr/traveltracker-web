@@ -9,7 +9,10 @@ import { FooterComponent } from '../shared/footer/footer.component';
 
 // INTERFACES
 import { ICountry } from '../interfaces/country.model';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
 
 describe('ListComponent', () => {
   let component: ListComponent;
@@ -22,10 +25,13 @@ describe('ListComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    declarations: [ListComponent, HeaderComponent, FooterComponent],
-    imports: [],
-    providers: [provideHttpClient(withInterceptorsFromDi()), provideHttpClientTesting()]
-}).compileComponents();
+      declarations: [ListComponent, HeaderComponent, FooterComponent],
+      imports: [],
+      providers: [
+        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClientTesting(),
+      ],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

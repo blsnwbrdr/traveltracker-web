@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
+// INTERFACES
+import { ICountry } from '../interfaces/country.model';
+
+// SERVICES
+import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
@@ -8,8 +14,12 @@ import { LocalStorageService } from '../services/local-storage.service';
 })
 export class UserComponent implements OnInit {
   selectedCountries!: Array<string>;
+  numCountries!: number;
 
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(
+    private countriesService: CountriesService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {
     // if there is local storage data, update selectedCountries array with data
@@ -23,5 +33,11 @@ export class UserComponent implements OnInit {
       });
       this.selectedCountries = localStorage;
     }
+    // get number of countries from json data
+    this.countriesService.getCountries().subscribe({
+      next: (data: ICountry[]) => {
+        this.numCountries = data.length;
+      },
+    });
   }
 }
