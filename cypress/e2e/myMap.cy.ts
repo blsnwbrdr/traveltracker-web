@@ -1,5 +1,3 @@
-// import testData from '../fixtures/testData.json';
-
 describe('My Map Tab', () => {
   it('loads Google Map element', () => {
     cy.visit('/');
