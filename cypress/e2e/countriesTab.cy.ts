@@ -1,5 +1,3 @@
-// import testData from '../fixtures/testData.json';
-
 describe('Countries Tab', () => {
   it('loads header', () => {
     cy.visit('/');
