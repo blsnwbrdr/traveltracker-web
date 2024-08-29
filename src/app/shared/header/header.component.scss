@@ -2,11 +2,21 @@
 @import "../../../sass/presets";
 
 .header {
-  margin-top: 1.25rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   .header__h1 {
-    font-family: "Chewy", Arial, sans-serif;
-    font-size: 3rem;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 375px) {
+  .header {
+    .header__h1 {
+      font-size: 2rem;
+      letter-spacing: 4px;
+    }
   }
 }
 
@@ -14,7 +24,17 @@
   .header {
     margin-bottom: 2rem;
     .header__h1 {
+      font-size: 3rem;
+      letter-spacing: 8px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    .header__h1 {
       font-size: 5rem;
+      letter-spacing: 16px;
     }
   }
 }
