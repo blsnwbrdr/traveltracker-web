@@ -7,10 +7,10 @@
     [center]="center"
     [options]="options"
   >
-    <map-marker
+    <map-advanced-marker
       #markerElem
       *ngFor="let marker of markers"
       [position]="marker.position"
-    ></map-marker>
+    ></map-advanced-marker>
   </google-map>
 </div>

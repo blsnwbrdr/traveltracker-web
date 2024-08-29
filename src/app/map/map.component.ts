@@ -12,6 +12,9 @@ import { CountriesService } from '../services/countries.service';
 import { LocalStorageService } from '../services/local-storage.service';
 import { MapService } from '../services/map.service';
 
+// CONFIGS
+import { Configs } from '../configs/configs.service';
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -37,10 +40,12 @@ export class MapComponent implements OnInit {
     disableDoubleClickZoom: true,
     maxZoom: 10,
     minZoom: 2,
+    mapId: this.configs.googleMapsID,
   };
   markers: Marker[] = [];
 
   constructor(
+    private configs: Configs,
     private mapService: MapService,
     private countriesService: CountriesService,
     private localStorageService: LocalStorageService
