@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {} from '@angular/google-maps';
 
 // INTERFACES
 import { ICountry } from '../interfaces/country.model';
