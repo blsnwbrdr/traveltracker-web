@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi, withJsonpSupport } from '@angular/common/http';
+import {
+  provideHttpClient,
+  withInterceptorsFromDi,
+  withJsonpSupport,
+} from '@angular/common/http';
 import { GoogleMapsModule } from '@angular/google-maps';
 
 // APP COMPONENTS
@@ -33,14 +37,16 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({ declarations: [
-        ListComponent,
-        MapComponent,
-        UserComponent,
-        HeaderComponent,
-        FooterComponent,
-    ],
-    exports: [RouterModule], imports: [CommonModule,
-        GoogleMapsModule,
-        RouterModule.forRoot(routes, {})], providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())] })
+@NgModule({
+  declarations: [
+    ListComponent,
+    MapComponent,
+    UserComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
+  exports: [RouterModule],
+  imports: [CommonModule, GoogleMapsModule, RouterModule.forRoot(routes, {})],
+  providers: [provideHttpClient(withInterceptorsFromDi(), withJsonpSupport())],
+})
 export class AppRoutingModule {}
