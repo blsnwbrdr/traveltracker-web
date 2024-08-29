@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "traveltracker-ng-app": {
+    "traveltracker-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/traveltracker-ng-app"
+              "base": "dist/traveltracker-web"
             },
             "index": "src/index.html",
             "polyfills": ["zone.js"],
@@ -77,14 +77,14 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "traveltracker-ng-app:build"
+            "buildTarget": "traveltracker-web:build"
           },
           "configurations": {
             "production": {
-              "buildTarget": "traveltracker-ng-app:build:production"
+              "buildTarget": "traveltracker-web:build:production"
             },
             "development": {
-              "buildTarget": "traveltracker-ng-app:build:development"
+              "buildTarget": "traveltracker-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,7 +92,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "traveltracker-ng-app:build"
+            "buildTarget": "traveltracker-web:build"
           }
         },
         "test": {

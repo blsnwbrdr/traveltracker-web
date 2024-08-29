@@ -1,5 +1,5 @@
 {
-  "name": "traveltracker-ng-app",
+  "name": "traveltracker-web",
   "version": "1.0.0",
   "scripts": {
     "branch-clean-up": "git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -D",
