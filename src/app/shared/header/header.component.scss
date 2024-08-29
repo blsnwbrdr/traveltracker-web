@@ -9,6 +9,9 @@
     font-size: 1.75rem;
     letter-spacing: 3px;
   }
+  .header__img {
+    width: 5.25rem;
+  }
 }
 
 @media (min-width: 375px) {
@@ -27,6 +30,9 @@
       font-size: 3rem;
       letter-spacing: 8px;
     }
+    .header__img {
+      width: 8.25rem;
+    }
   }
 }
 
@@ -35,6 +41,9 @@
     .header__h1 {
       font-size: 5rem;
       letter-spacing: 16px;
+    }
+    .header__img {
+      width: 10.25rem;
     }
   }
 }
