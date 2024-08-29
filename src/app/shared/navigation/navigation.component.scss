@@ -21,10 +21,27 @@
     font-size: 1.25rem;
   }
   .nav-link {
+    color: $colorDarkGrey;
     display: inline-block;
     font-size: 0.75rem;
     &.active {
-      color: $colorAqua;
+      i {
+        color: $colorQuaternary;
+      }
+    }
+  }
+
+  // non-touchscreens
+  @media (hover: hover) {
+    .nav-link {
+      &:hover {
+        color: $colorTertiary;
+        &.active {
+          i {
+            color: $colorTertiary;
+          }
+        }
+      }
     }
   }
 }
