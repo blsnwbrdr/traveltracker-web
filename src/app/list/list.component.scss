@@ -1,6 +1,16 @@
 // PRESET VARIABLES
 @import "../../sass/presets";
 
+.main {
+  margin-top: 7.8rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-top: 0;
+  }
+}
+
 // LIST COLUMNS
 .list {
   column-count: 1;
