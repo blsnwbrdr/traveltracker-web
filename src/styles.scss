@@ -9,13 +9,27 @@ body {
   width: 100%;
 }
 body {
-  font-family: "Titillium Web", Arial, sans-serif;
+  font-family: $titillium-web, Arial, sans-serif;
   color: $colorDarkGrey;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+button,
+li,
 a {
+  font-weight: 400;
+}
+a,
+a:visited {
   color: $colorDarkGrey;
+  text-decoration: none;
   &:hover {
-    color: $colorPrimary;
+    color: $colorTertiary;
+    text-decoration: underline;
   }
 }
 .text--primary {
@@ -28,7 +42,7 @@ a {
   color: $colorTertiary;
 }
 .text--quaternary {
-  color: colorQuaternary;
+  color: $colorQuaternary;
 }
 .text--red {
   color: $colorRed;
