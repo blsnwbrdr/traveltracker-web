@@ -57,7 +57,7 @@
   {
     "name": "Antarctica",
     "continent": "Antarctica",
-    "latlng": ["-90", "0"]
+    "latlng": ["-79.5", "21.5"]
   },
   {
     "name": "Antigua and Barbuda",
@@ -436,7 +436,7 @@
   },
   {
     "name": "Grenada",
-    "continent": "Europe",
+    "continent": "North America",
     "latlng": ["12.11666666", "-61.66666666"]
   },
   {
@@ -751,7 +751,7 @@
   },
   {
     "name": "Martinique",
-    "continent": "Oceania",
+    "continent": "North America",
     "latlng": ["14.666667", "-61"]
   },
   {
