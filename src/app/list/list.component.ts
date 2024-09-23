@@ -50,8 +50,8 @@ export class ListComponent implements OnInit {
     });
   }
 
-  // ON CHANGE SELECT METHOD
-  selectChange(event: any) {
+  // ON CHANGE CONTINENT DROPDOWN SELECT
+  continentChange(event: any) {
     const selectedContinent = event.target.value;
 
     // import countries json data
@@ -96,8 +96,8 @@ export class ListComponent implements OnInit {
     });
   }
 
-  // ON CHANGE CHECKBOX METHOD
-  checkboxChange(name: string, isChecked: boolean) {
+  // ON CHANGE OF COUNTRY CHECKBOX
+  countryChange(name: string, isChecked: boolean) {
     // update selected countries data to local storage
     if (isChecked) {
       this.selectedCountries.push(name);
@@ -106,6 +106,16 @@ export class ListComponent implements OnInit {
       const index = this.selectedCountries.indexOf(name);
       this.selectedCountries.splice(index, 1);
       this.saveData('Visited', this.selectedCountries);
+    }
+  }
+
+  // ON KEYPRESS OF COUNTRY BUTTON
+  countryKeypress(event: any, country: any) {
+    event.preventDefault();
+    const isEnterOrSpace = event.keyCode === 32 || event.keyCode === 13;
+    if (isEnterOrSpace) {
+      const elem = document.getElementById(country.name);
+      elem?.click();
     }
   }
 
