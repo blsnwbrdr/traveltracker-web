@@ -26,6 +26,17 @@
   }
 }
 
+// SELECT
+.form-select {
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .form-select {
+    width: 250px;
+  }
+}
+
 // CHECKBOXES
 .checkbox {
   width: 100%;
