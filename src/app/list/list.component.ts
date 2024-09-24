@@ -51,9 +51,7 @@ export class ListComponent implements OnInit {
   }
 
   // ON CHANGE CONTINENT DROPDOWN SELECT
-  continentChange(event: any) {
-    const selectedContinent = event.target.value;
-
+  continentChange(selectedContinent: string) {
     // import countries json data
     this.countriesService.getCountries().subscribe({
       next: (data: ICountry[]) => {
@@ -65,7 +63,7 @@ export class ListComponent implements OnInit {
         });
 
         if (selectedContinent !== 'All') {
-          let list = [];
+          const list = [];
           for (let x = 0; x < data.length; x++) {
             if (selectedContinent === data[x].continent) {
               // add 'checked' property for selectedCountries from local storage
@@ -110,11 +108,14 @@ export class ListComponent implements OnInit {
   }
 
   // ON KEYPRESS OF COUNTRY BUTTON
-  countryKeypress(event: any, country: any) {
+  countryKeypress(
+    event: { preventDefault: () => void; keyCode: number },
+    country: string
+  ) {
     event.preventDefault();
     const isEnterOrSpace = event.keyCode === 32 || event.keyCode === 13;
     if (isEnterOrSpace) {
-      const elem = document.getElementById(country.name);
+      const elem = document.getElementById(country);
       elem?.click();
     }
   }
