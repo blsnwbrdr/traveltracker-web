@@ -54,11 +54,25 @@ describe('ListComponent', () => {
     expect(labelEl).toBeTruthy();
   });
 
-  it('should call "onChange" method', () => {
+  it('should call "continentChange" method', () => {
+    const selectEl = el.querySelector('select') as HTMLSelectElement;
+    spyOn(component, 'continentChange');
+    selectEl.dispatchEvent(new Event('change'));
+    expect(component.continentChange).toHaveBeenCalled();
+  });
+
+  it('should call "countryChange" method', () => {
     const inputEl = el.querySelector('input') as HTMLInputElement;
-    spyOn(component, 'onChange');
+    spyOn(component, 'countryChange');
     inputEl.dispatchEvent(new Event('change'));
-    expect(component.onChange).toHaveBeenCalled();
+    expect(component.countryChange).toHaveBeenCalled();
+  });
+
+  it('should call "countryKeypress" method', () => {
+    const checkboxEl = el.querySelector('.checkbox') as HTMLInputElement;
+    spyOn(component, 'countryKeypress');
+    checkboxEl.dispatchEvent(new Event('keypress'));
+    expect(component.countryKeypress).toHaveBeenCalled();
   });
 
   it('should call "saveData" method', () => {
