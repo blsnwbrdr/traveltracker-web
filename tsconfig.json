@@ -16,5 +16,6 @@
     "useDefineForClassFields": false,
     "strict": true,
     "resolveJsonModule": true
-  }
+  },
+  "exclude": ["cypress/**/*.ts", "cypress.config.ts"]
 }
